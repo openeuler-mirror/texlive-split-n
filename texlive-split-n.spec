@@ -4,7 +4,7 @@
 
 Name:           texlive-split-n
 Version:        %{tl_version}
-Release:        24
+Release:        25
 Epoch:          8
 Summary:        TeX formatting system
 License:        Artistic 2.0 and GPLv2 and GPLv2+ and LGPLv2+ and LPPL and MIT and Public Domain and UCD and Utopia
@@ -60,8 +60,6 @@ Source2413:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/t
 Source2414:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/ledmac.doc.tar.xz
 Source2416:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/leipzig.tar.xz
 Source2417:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/leipzig.doc.tar.xz
-Source2419:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/lexikon.tar.xz
-Source2420:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/lexikon.doc.tar.xz
 Source2421:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/lexref.tar.xz
 Source2422:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/lexref.doc.tar.xz
 Source2423:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/linguex.tar.xz
@@ -3329,30 +3327,6 @@ AutoReqProv:    No
 
 %description -n texlive-leipzig-doc
 Documentation for leipzig
-
-%package -n texlive-lexikon
-Provides:       tex-lexikon = %{tl_version}
-License:        LPPL
-Summary:        Macros for a two language dictionary
-Version:        svn17364.1.0c
-
-Requires:       texlive-base, texlive-kpathsea-bin, tex-kpathsea
-
-Requires:       tex(ipa.sty)
-Provides:       tex(lexikon.sty) = %{tl_version}
-
-%description -n texlive-lexikon
-lexikon package
-
-%package -n texlive-lexikon-doc
-Summary:        Documentation for lexikon
-Version:        svn17364.1.0c
-
-Provides:       tex-lexikon-doc
-AutoReqProv:    No
-
-%description -n texlive-lexikon-doc
-Documentation for lexikon
 
 %package -n texlive-lexref
 Provides:       tex-lexref = %{tl_version}
@@ -7775,14 +7749,6 @@ rm -f %{buildroot}%{_datadir}/texlive/texmf-dist/tlpkg/tlpobj/*
 %license lppl1.3.txt
 %{_texdir}/texmf-dist/doc/latex/leipzig/
 
-%files -n texlive-lexikon
-%license lppl1.txt
-%{_texdir}/texmf-dist/tex/latex/lexikon/
-
-%files -n texlive-lexikon-doc
-%license lppl1.txt
-%{_texdir}/texmf-dist/doc/latex/lexikon/
-
 %files -n texlive-lexref
 %license lppl1.3.txt
 %{_texdir}/texmf-dist/tex/latex/lexref/
@@ -8920,6 +8886,9 @@ rm -f %{buildroot}%{_datadir}/texlive/texmf-dist/tlpkg/tlpobj/*
 %doc %{_texdir}/texmf-dist/doc/luatex/luavlna/
 
 %changelog
+* Mon Aug 23 2021 caodongxia <caodongxia@huawei.com> - 8:2018-25
+- Remove texlive-lexikon who requires texlive-wsuipa
+
 * Wed May 19 2021 maminjie <maminjie1@huawei.com> - 8:2018-24
 - split texlive
 
